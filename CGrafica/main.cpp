@@ -28,7 +28,7 @@ int eye_camX = 0, eye_camY = 0, eye_camZ = 0;
 float posX = -10, posY = -10, posZ = -33;
 
 float cameraPos[] = {0.0f, 0.0f, 0.0f};
-float cameraFront[] = {0.0f, 0.0f, 0.0f};
+float cameraFront[] = {0.0f, 0.0f, -10.0f};
 float cameraUp[] = {0.0f, 1.0f, 0.0f};
 
 //Propiedades de LUZ
@@ -39,7 +39,7 @@ GLfloat Position2[] = {0.0f, 0.0f, -5.0f, 1.0f};
 
 void InitGL() // Inicializamos parametros
 {
-    glClearColor(0.2f, 0.2f, 0.2f, 1.0f); // Color de Fondo
+    glClearColor(0.5f, 0.5f, 0.5f, 1.0f); // Color de Fondo
     glEnable(GL_TEXTURE_2D);
     
     //glShadeModel (GL_SMOOTH);
@@ -73,8 +73,8 @@ void display(void) // Creamos la funcion donde se dibuja
     glRotatef(eye_camZ, 0.0, 0.0, 1.0);
     */
     
-    //gluLookAt(cameraPos[0], cameraPos[1], cameraPos[2], cameraPos[0] + cameraFront[0], cameraPos[1] + cameraFront[1], cameraPos[2] + cameraFront[1], cameraUp[0], cameraUp[1], cameraUp[2]);
-    gluLookAt(cameraPos[0] + posX, cameraPos[1] + posY, cameraPos[2] + posZ, eye_camX, eye_camY, eye_camZ, cameraUp[0], cameraUp[1], cameraUp[2]);
+    gluLookAt(cameraPos[0] - posX, cameraPos[1] - posY, cameraPos[2] - posZ, cameraPos[0] + cameraFront[0], cameraPos[1] + cameraFront[1], cameraPos[2] + cameraFront[2], cameraUp[0], cameraUp[1], cameraUp[2]);
+    //gluLookAt(cameraPos[0] - posX, cameraPos[1] - posY, cameraPos[2] - posZ, eye_camX, eye_camY, eye_camZ, cameraUp[0], cameraUp[1], cameraUp[2]);
 
     
     
