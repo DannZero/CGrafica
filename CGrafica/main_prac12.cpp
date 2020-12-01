@@ -65,7 +65,7 @@ CCamera objCamera;	//Create objet Camera
 
 GLfloat g_lookupdown = 0.0f;    // Look Position In The Z-Axis (NEW) 
 
-int font=(int)GLUT_BITMAP_HELVETICA_18;
+long font = (long)GLUT_BITMAP_HELVETICA_18;
 
 //Otras opciones son:
 /*GLUT_BITMAP_8_BY_13
