@@ -10,6 +10,9 @@
 		65C8C9E9256F07D9000327BB /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65C8C9E8256F07D9000327BB /* main.cpp */; };
 		65C8C9F1256F0866000327BB /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65C8C9F0256F0866000327BB /* OpenGL.framework */; };
 		65C8C9F3256F0877000327BB /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65C8C9F2256F0877000327BB /* GLUT.framework */; };
+		65D595342575FC9C007864AD /* texture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65D5952F2575FC9C007864AD /* texture.cpp */; };
+		65D595352575FC9C007864AD /* Camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65D595312575FC9C007864AD /* Camera.cpp */; };
+		65D595362575FC9C007864AD /* figuras.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65D595322575FC9C007864AD /* figuras.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -29,6 +32,13 @@
 		65C8C9E8256F07D9000327BB /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		65C8C9F0256F0866000327BB /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		65C8C9F2256F0877000327BB /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
+		65D5952E2575FC9C007864AD /* texture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = texture.h; sourceTree = "<group>"; };
+		65D5952F2575FC9C007864AD /* texture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = texture.cpp; sourceTree = "<group>"; };
+		65D595302575FC9C007864AD /* Camera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Camera.h; sourceTree = "<group>"; };
+		65D595312575FC9C007864AD /* Camera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Camera.cpp; sourceTree = "<group>"; };
+		65D595322575FC9C007864AD /* figuras.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = figuras.cpp; sourceTree = "<group>"; };
+		65D595332575FC9C007864AD /* figuras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = figuras.h; sourceTree = "<group>"; };
+		65D595372575FCB9007864AD /* Main.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Main.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +74,13 @@
 		65C8C9E7256F07D9000327BB /* CGrafica */ = {
 			isa = PBXGroup;
 			children = (
+				65D595312575FC9C007864AD /* Camera.cpp */,
+				65D595302575FC9C007864AD /* Camera.h */,
+				65D595372575FCB9007864AD /* Main.h */,
+				65D595322575FC9C007864AD /* figuras.cpp */,
+				65D595332575FC9C007864AD /* figuras.h */,
+				65D5952F2575FC9C007864AD /* texture.cpp */,
+				65D5952E2575FC9C007864AD /* texture.h */,
 				65C8C9E8256F07D9000327BB /* main.cpp */,
 			);
 			path = CGrafica;
@@ -135,6 +152,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				65C8C9E9256F07D9000327BB /* main.cpp in Sources */,
+				65D595362575FC9C007864AD /* figuras.cpp in Sources */,
+				65D595352575FC9C007864AD /* Camera.cpp in Sources */,
+				65D595342575FC9C007864AD /* texture.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

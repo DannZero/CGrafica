@@ -1,11 +1,4 @@
-///////// www.openboxer.260mb.com ////////////
-//                                 Sep-2009 //
-//  PROGRAMA : DIBUJA ESFERA,CONO,CUBO
-//
-//
-//////////////////////////////////////////////////
-
-
+/*
 #ifdef __APPLE__
 #include <GLUT/glut.h>
 #else
@@ -13,8 +6,8 @@
 #include <GL\glu.h>
 #include <GL\glut.h>
 #endif
-
-#include <stdlib.h>
+*/
+#include "Main.h"
 
 //DEFINICION DE VARIABLES
 
@@ -187,6 +180,42 @@ void keyboard(unsigned char key, int x, int y) {
     glutPostRedisplay(); //Indica a OpenGL Redibujar
 }
 
+// Aqui ponemos lo que queremos dibujar.
+void display2(void)
+{
+    // Propiedades del material
+    GLfloat mat_ambient[] = { 0.7f, 0.7f, 0.7f, 1.0f };
+    GLfloat mat_diffuse[] = { 0.1f, 0.5f, 0.8f, 1.0f };
+    GLfloat mat_specular[] = { 1.0f, 1.0f, 1.0f, 1.0f };
+    GLfloat mat_shininess[] = { 100.0f };
+    
+    // "Limpiamos" el frame buffer con el color de "Clear", en este
+    // caso negro.
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    
+    glMatrixMode( GL_MODELVIEW_MATRIX );
+    glLoadIdentity();
+    
+    glTranslatef(0.0,0.0,-20.0);
+    // Rotacion de 30 grados en torno al eje x
+    glRotated(30.0, 1.0, 0.0, 0.0);
+    // Rotacion de -30 grados en torno al eje y
+    //glRotated(-30.0, 0.0, 1.0, 0.0);
+    glRotated(-30, 0.0, 1.0, 0.0);
+    // Dibujamos una "Tetera" y le aplico el material
+    
+    glMaterialfv(GL_FRONT, GL_AMBIENT, mat_ambient);
+    glMaterialfv(GL_FRONT, GL_DIFFUSE, mat_diffuse);
+    glMaterialfv(GL_FRONT, GL_SPECULAR, mat_specular);
+    glMaterialfv(GL_FRONT, GL_SHININESS, mat_shininess);
+    glutSolidTeapot(7.0);
+    //glutWireCube(2.0f);
+    
+    //glFlush();
+    glutSwapBuffers ( );
+    return;
+}
+
 void arrow_keys(int a_keys, int x, int y) // Funcion para manejo de teclas especiales (arrow keys)
 {
     switch (a_keys) {
@@ -229,7 +258,7 @@ int main(int argc, char** argv) {
     glutCreateWindow("ESFERA, CONO, CUBO "); // Nombre de la Ventana
     //glutFullScreen     ( );                    // Pantalla completa
     InitGL(); // Parametros iniciales de la aplicaci√≥n
-    glutDisplayFunc(display); // Funcion de dibujo
+    glutDisplayFunc(display2); // Funcion de dibujo
     glutReshapeFunc(reshape); // Funcion en caso de cambio de tama√±o
     glutKeyboardFunc(keyboard); // Funcion de manejo de teclado
     glutSpecialFunc(arrow_keys); // Otras funciones
